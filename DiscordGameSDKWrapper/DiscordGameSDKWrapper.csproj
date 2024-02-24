@@ -1,25 +1,37 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <TargetFrameworks>net462;net472;net48;net5.0;net6.0;netstandard2.0;netstandard2.1;netcoreapp2.2;netcoreapp3.1</TargetFrameworks>
+        <OutputType>Library</OutputType>
+        <TargetFrameworks>net462;net472;net481;net5.0;net6.0;net7.0;net8.0;netstandard2.0;netstandard2.1;netcoreapp2.2.2;netcoreapp3.1</TargetFrameworks>
         <Nullable>disable</Nullable>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Title>DiscordGameSDKWrapper</Title>
+        <PackageId>DiscordGameSDKWrapper</PackageId>
+        <Version>3.2.1.1</Version>
+        <PackageTags>Discord</PackageTags>
         <Authors>Jannify</Authors>
         <Description>Nuget package of the provided Discord Game SDK C# Wrapper contained in the zip linked on https://discord.com/developers/docs/game-sdk/sdk-starter-guide</Description>
-        <PackageTags>Discord</PackageTags>
-        <PackageVersion>3.2.1.0</PackageVersion>
-        <Title>DiscordGameSDKWrapper</Title>
-        <RepositoryUrl>https://github.com/Jannify/DiscordGameSDKWrapper</RepositoryUrl>
-        <AssemblyVersion>3.2.1.0</AssemblyVersion>
+        <RepositoryType>git</RepositoryType>
+        <RepositoryUrl>https://github.com/Jannify/DiscordGameSDKWrapper.git</RepositoryUrl>
+        <PackageProjectUrl>https://github.com/Jannify/DiscordGameSDKWrapper</PackageProjectUrl>
+        <PackageReleaseNotes>https://github.com/Jannify/DiscordGameSDKWrapper/releases/tag/v3.2.1</PackageReleaseNotes>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
         <Copyright>Copyright (C) 2022 Discord Inc. See https://discord.com/developers/docs/legal &amp; https://discord.com/developers/docs/policy</Copyright>
-		<PackageLicenseFile>LICENSE.md</PackageLicenseFile>
-		<SignAssembly>true</SignAssembly>
-		<AssemblyOriginatorKeyFile>..\strongkey.snk</AssemblyOriginatorKeyFile>
-		<PublicSign>true</PublicSign>
+        <SignAssembly>true</SignAssembly>
+        <PublicSign>true</PublicSign>
+        <AssemblyOriginatorKeyFile>..\strongkey.snk</AssemblyOriginatorKeyFile>
     </PropertyGroup>
     <ItemGroup>
-        <None Include="..\LICENSE.md" Pack="true" Visible="false" PackagePath="" />
+        <None Include="..\README.md" Pack="true" Visible="false" PackagePath=""/>
+        <None Include="..\LICENSE.md" Pack="true" Visible="false" PackagePath=""/>
         <None Include="..\strongkey.snk">
-          <Link>strongkey.snk</Link>
+            <Link>strongkey.snk</Link>
         </None>
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="DotNet.ReproducibleBuilds" Version="1.1.1">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+        </PackageReference>
     </ItemGroup>
 </Project>

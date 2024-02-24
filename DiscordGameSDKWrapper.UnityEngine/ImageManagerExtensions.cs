@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace DiscordGameSDKWrapper
+namespace DiscordGameSDKWrapper.UnityEngine
 {
     public static class ImageManagerExtensions
     {
